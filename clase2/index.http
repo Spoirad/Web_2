@@ -1,0 +1,8 @@
+GET http://localhost:3000/contact
+
+###
+
+POST http://localhost:3000/client
+Content-Type: 'application/json'
+
+{"name": "U-tad"}

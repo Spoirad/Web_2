@@ -1,0 +1,55 @@
+GET http://localhost:3000/api/cursos/programacion
+###
+GET http://localhost:3000/api/cursos/matematicas
+###
+GET http://localhost:3000/api/cursos/programacion?ordenar=vistas
+###
+GET http://localhost:3000/api/cursos/matematicas?ordenar=vistas
+###
+// es una ruta dinamica que cambias el luenguaje al final y te haze el get disntinto
+GET http://localhost:3000/api/cursos/programacion/python
+###
+GET http://localhost:3000/api/cursos/matematicas/algebra 
+###
+GET http://localhost:3000/api/cursos/programacion/python/intermedio
+###
+POST http://localhost:3000/api/cursos/programacion HTTP/1.1
+Content-Type: application/json
+
+{"id": 4,
+"titulo" : "Aprende Node.js" ,
+"lenguaje" : "javascript" ,
+"vistas" : 45676,
+"nivel" : "basico"}
+###
+PUT http://localhost:3000/api/cursos/programacion/2 HTTP/1.1
+Content-Type: application/json
+
+{"id": 2,
+"titulo": "Python intermedio con proyectos" ,
+"lenguaje": "python",
+"vistas": 123996,
+"nivel": "intermedio"}
+
+###
+DELETE http://localhost:3000/api/cursos/programacion/1 HTTP/1.1
+###
+POST http://localhost:3000/api/cursos/matematicas HTTP/1.1
+Content-Type: application/json
+
+{"id": 3,
+"titulo" : "Aprende mats" ,
+"tema" : "algebra" ,
+"vistas" : 45676,
+"nivel" : "basico"}
+###
+PUT http://localhost:3000/api/cursos/matematicas/2 HTTP/1.1
+Content-Type: application/json
+
+{"id": 2,
+"titulo": "algebra intermedio con proyectos" ,
+"tema": "algebra",
+"vistas": 123996,
+"nivel": "intermedio"}
+
+###

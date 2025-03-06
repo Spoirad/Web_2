@@ -1,0 +1,103 @@
+GET http://localhost:3000/index
+###
+GET http://localhost:3000/tracks/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2M4MzgzOTE4YWU0ZGE3N2MxOGMxMWUiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQxMjUxMzI0LCJleHAiOjE3NDEyNTg1MjR9.ZuhtpCoZPxzDrKr9FT4AchYp6CeON9cdSX2KszIhccg
+###
+GET http://localhost:3000/storages
+###
+GET http://localhost:3000/users
+###
+POST http://localhost:3000/tracks
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2M5NmQ1MmM2ZDBkMWE5NzQ0NTdlMzYiLCJyb2xlIjpbImFkbWluIl0sImlhdCI6MTc0MTI1Mzk3MCwiZXhwIjoxNzQxMjYxMTcwfQ.otsLOYMbmS_L-e8xh0jHg1EC8TtaW9FcVERrYXWRuhM
+api_key: prueba_api_random
+
+{"title": "NUEVO",
+  "artist": "Eminem",
+  "album": "The Marshall Mathers LP",
+  "genre": "Hip-Hop",
+  "releaseDate": "2000-05-23",
+  "duration": 404,
+  "falso": "ejemplo"  
+  }
+
+###
+POST http://localhost:3000/storage HTTP/1.1
+Content-Type: multipart/form-data; boundary=boundary123
+
+--boundary123
+Content-Disposition: form-data; name="image"; filename="bici_lago.jpg"
+Content-Type: image/jpeg
+
+< ./bici_lago.jpg
+--boundary123--
+###
+
+POST http://localhost:3000/users
+Content-Type: application/json
+api_key: prueba_api_random
+
+{
+  "name": "Juan3",
+  "age": 30,
+  "email": "test232@gmail.com",
+  "password": "Hdsah.fabig",
+  "role": "admin",
+  "extra_field": "no_debe_guardarse"
+}
+###
+GET http://localhost:3000/tracks/67b5b193ad9a249c910ff385
+###
+DELETE http://localhost:3000/tracks/67c8241e8e1992862d9c8037
+###
+
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+api_key: prueba_api_random
+
+{
+  "name": "Juan2",
+  "age": 12,
+  "email": "juan2@example.com",
+  "password": "123456123"
+}
+###
+POST http://localhost:3000/auth/register HTTP/1.1
+Content-Type: application/json
+api_key: prueba_api_random
+
+{
+"name": "Menganito",
+"age": 20,
+"email": "test10@test.com",
+"password": "HolaMundo.01"
+}
+###
+POST http://localhost:3000/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+"email": "test10@test.com",
+"password": "HolaMundo.01"
+}
+###
+POST http://localhost:3000/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "test232@gmail.com",
+  "password": "Hdsah.fabig"
+}
+###
+POST http://localhost:3000/auth/register HTTP/1.1
+Content-Type: application/json
+api_key: prueba_api_random
+
+{
+"name": "Protes",
+"age": 20,
+"email": "protes4@test.com",
+"password": "protes.01",
+"role": "admin"
+}
+###
