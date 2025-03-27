@@ -11,4 +11,14 @@ const dbConnect = async () => {
     mongoose.connection.on("connected", () => console.log("Conectado a la BD"))
     mongoose.connection.on("erorr", () => console.log(error))
 }
+
+
+const db_uri = process.env.NODE_ENV === 'test' ? process.env.DB_URI_TEST:
+    process.env.DB_URI
+
+    const dbconnect = () => {
+        mongoose.set('strictQuery', false)
+        mongoose.connect(db_uri)
+    }
+
 module.exports = dbConnect

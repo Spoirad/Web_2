@@ -16,8 +16,11 @@ app.use(express.static("storage")) // http://localhost:3000/file.jpg
 
 const port = process.env.PORT || 3000;
 
-app.listen(port, () => {
-  console.log("Servidor escuchando en el puerto " + port);
-});
-
 dbConnect();
+
+const server = app.listen(port, () => {
+  console.log(`Escuchando en el puerto ${port}`)
+  })
+
+module.exports = { app, server}
+

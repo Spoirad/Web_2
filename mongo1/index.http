@@ -1,13 +1,13 @@
-GET http://localhost:3000/index
+GET http://localhost:3001/index
 ###
-GET http://localhost:3000/tracks/
+GET http://localhost:3007/tracks/
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2M4MzgzOTE4YWU0ZGE3N2MxOGMxMWUiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQxMjUxMzI0LCJleHAiOjE3NDEyNTg1MjR9.ZuhtpCoZPxzDrKr9FT4AchYp6CeON9cdSX2KszIhccg
 ###
-GET http://localhost:3000/storages
+GET http://localhost:3001/storages
 ###
-GET http://localhost:3000/users
+GET http://localhost:3001/users
 ###
-POST http://localhost:3000/tracks
+POST http://localhost:3001/tracks
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2M5NmQ1MmM2ZDBkMWE5NzQ0NTdlMzYiLCJyb2xlIjpbImFkbWluIl0sImlhdCI6MTc0MTI1Mzk3MCwiZXhwIjoxNzQxMjYxMTcwfQ.otsLOYMbmS_L-e8xh0jHg1EC8TtaW9FcVERrYXWRuhM
 api_key: prueba_api_random
@@ -22,7 +22,7 @@ api_key: prueba_api_random
   }
 
 ###
-POST http://localhost:3000/storage HTTP/1.1
+POST http://localhost:3001/storage HTTP/1.1
 Content-Type: multipart/form-data; boundary=boundary123
 
 --boundary123
@@ -33,7 +33,7 @@ Content-Type: image/jpeg
 --boundary123--
 ###
 
-POST http://localhost:3000/users
+POST http://localhost:3001/users
 Content-Type: application/json
 api_key: prueba_api_random
 
@@ -46,12 +46,12 @@ api_key: prueba_api_random
   "extra_field": "no_debe_guardarse"
 }
 ###
-GET http://localhost:3000/tracks/67b5b193ad9a249c910ff385
+GET http://localhost:3001/tracks/67b5b193ad9a249c910ff385
 ###
-DELETE http://localhost:3000/tracks/67c8241e8e1992862d9c8037
+DELETE http://localhost:3001/tracks/67c8241e8e1992862d9c8037
 ###
 
-POST http://localhost:3000/auth/register
+POST http://localhost:3001/auth/register
 Content-Type: application/json
 api_key: prueba_api_random
 
@@ -62,7 +62,7 @@ api_key: prueba_api_random
   "password": "123456123"
 }
 ###
-POST http://localhost:3000/auth/register HTTP/1.1
+POST http://localhost:3001/auth/register HTTP/1.1
 Content-Type: application/json
 api_key: prueba_api_random
 
@@ -73,7 +73,7 @@ api_key: prueba_api_random
 "password": "HolaMundo.01"
 }
 ###
-POST http://localhost:3000/auth/login HTTP/1.1
+POST http://localhost:3001/auth/login HTTP/1.1
 Content-Type: application/json
 
 {
@@ -81,7 +81,7 @@ Content-Type: application/json
 "password": "HolaMundo.01"
 }
 ###
-POST http://localhost:3000/auth/login HTTP/1.1
+POST http://localhost:3001/auth/login HTTP/1.1
 Content-Type: application/json
 
 {
@@ -89,15 +89,25 @@ Content-Type: application/json
   "password": "Hdsah.fabig"
 }
 ###
-POST http://localhost:3000/auth/register HTTP/1.1
+POST http://localhost:3001/auth/register HTTP/1.1
 Content-Type: application/json
 api_key: prueba_api_random
 
 {
 "name": "Protes",
 "age": 20,
-"email": "protes4@test.com",
+"email": "protes5@test.com",
 "password": "protes.01",
 "role": "admin"
 }
 ###
+
+POST http://localhost:3002/mail
+Content-Type: application/json
+
+{
+  "subject": "Asunto del correo",
+  "text": "cabeza buqueeeeeeeeeeee",
+  "to": "nadria656@gmail.com",
+  "from": "angellopezpaparella2004@gmail.com"
+}
